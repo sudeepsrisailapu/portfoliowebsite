@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a530cef0e4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<div id="header">
+    <div class="container">
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+                <i class="fa-solid fa-x" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Sophomore</p>
+            <h1>Hey! I'm <span>Sudeep</span><br></h1>
+        </div>
+    </div>
+</div>
+
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Hi, I'm Sudeep Srisailapu! I am currently a sophomore at the University of Wisconsin Madison and I am pursuing a degree in computer science currently.
+                     I have been quite passionate about computers for quite some time as building and working on computers is something that I do quite often. While technology 
+                     is something that has defined a lot of my hobbies, I also enjoy playing tennis, skateboarding, watching films. </p>
+
+                <div class="tab-titles">
+                    <p class = "tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class = "tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class = "tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id = "skills">
+                    <ul>
+                        <li><span>Programming Languages</span><br>Java, Python, CSS, HTML</li>
+                        <li><span>Tools and Technologies</span><br>Eclipse, IntelliJ, Visual Studio Code</li>
+                        <li><span>Operating Systems</span><br>Windows, MacOS</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id = "experience">
+                    <ul>
+                        <li><span>Tennis Instructor</span><br>06/2021 - 05/2022</li>
+                        <li><span>Staples Print Center</span><br>07/2023 - 08/2023</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id = "education">
+                    <ul>
+                        <li><span>School</span><br>University of Wisconsin - Madison</li>
+                        <li><span>Degree</span><br>B.S. Computer Science</li>
+                        <li><span>Current GPA</span><br>3.05</li>
+                    </ul>
+                </div>
+
+            </div> 
+        </div>
+    </div>
+</div>
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-regular fa-paper-plane"></i> srisailapu@wisc.edu</p>
+                <p><i class="fa-solid fa-phone"></i> 763-257-6697</p>
+            </div>
+        </div>
+        <a href="images/Final Resume.pdf" download class="button">Download Resume</a>
+    </div>
+</div>
+
+<div class="copyright">
+    <p>Copyright © Sudeep</p>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+
+</body>
+</html>
